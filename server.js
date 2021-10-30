@@ -13,13 +13,20 @@ app.use(cors())
 app.use(morgan('tiny'))
 app.use(express.urlencoded())
 app.use(express.json())
+app.use(express.json())
 
 //connecting to mongoDB
 import mongoClient from './src/config/db.js'
 mongoClient()
 //load routers
-
+app.use('/api/v1/user', (req, res) => {
+  res.json({
+    status: 'ok',
+    message: 'this is the user API',
+  })
+})
 //user routers
+
 // app.use()
 
 app.use('/', (req, res) => {
@@ -27,7 +34,7 @@ app.use('/', (req, res) => {
 })
 app.listen(PORT, (error) => {
   if (error) {
-    console.log(error)
+    return console.log(error)
   }
   console.log(`server running at http://localhost:${PORT}`)
 })
