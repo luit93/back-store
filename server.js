@@ -19,13 +19,9 @@ app.use(express.json())
 import mongoClient from './src/config/db.js'
 mongoClient()
 //load routers
-app.use('/api/v1/user', (req, res) => {
-  res.json({
-    status: 'ok',
-    message: 'this is the user API',
-  })
-})
-//user routers
+import profileRouter from './src/routers/profileRouter.js'
+//client user routers
+app.use('/api/v1/user', profileRouter)
 
 // app.use()
 

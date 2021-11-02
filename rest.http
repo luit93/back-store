@@ -1,10 +1,36 @@
 # api lists
 
-### create new user profile
+### create new client profile
 
 POST http://localhost:8000/api/v1/user
 Content-Type: application/json
 
 {
-    "fname":"Luit"
+    "fname":"batman",
+    "lname": "Saikia",
+    "email":"Tester2@iii.co",
+    "password":"1234Aa/",
+    "phone":"999999999",
+    "dob": "1993-04-23",
+    "address":"11 sydney St",
+    "gender":"male"
+
+}
+
+
+### email verification API
+
+POST http://localhost:8000/api/v1/user/email-verification
+Content-Type: application/json
+
+{
+    "otp":"67051433",
+    "email":"Tester2@iii.co"
+}
+### Get client info
+GET http://localhost:8000/api/v1/user
+Content-Type: application/json
+
+{
+  
 }
