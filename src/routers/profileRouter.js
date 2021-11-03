@@ -11,9 +11,10 @@ import { hashPassword } from '../helpers/bcrypt.helper.js'
 import {
   createUniqueResetPin,
   findUniqueResetPin,
+  deleteUniqueResetPin,
 } from '../models/reset-pin/ResetPin.model.js'
 import { getRandomOTP } from '../helpers/otp.helper.js'
-import { emailProcessor } from '../helpers/mail.helper.js'
+import { emailProcessor, verificationEmail } from '../helpers/mail.helper.js'
 const profileRouter = express.Router()
 
 profileRouter.all('/', (req, res, next) => {
@@ -82,7 +83,9 @@ profileRouter.post(
 
         if (isProfileActive?._id) {
           //send welcome email to user
+          verificationEmail(req.body.email, req.body.fname)
           //delete reset pin data
+          deleteUniqueResetPin(req.body)
           return res.json({
             status: 'success',
             message: 'Your account has been verified. You may log in now',

@@ -6,7 +6,7 @@ export const createProfile = (newProfile) => {
 export const activateProfile = (email) => {
   return ProfileSchema.findOneAndUpdate(
     { email },
-    { status: 'active' },
+    { status: 'active', isEmailConfirmed: true },
     { new: true }
   )
 }

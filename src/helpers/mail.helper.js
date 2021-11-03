@@ -32,3 +32,19 @@ export const emailProcessor = ({ email, otp, fname }) => {
   }
   send(mailObject)
 }
+export const verificationEmail = ({ email, fname }) => {
+  const mailObject = {
+    from: `"🤖TECH_STORE🤖 <${process.env.EMAIL_STORE}> `,
+    to: email,
+    subject: `Welcome, ${fname}`,
+    text: `Hello ${fname}, your email has been successfully verified.  You may log in,`,
+    html: `
+    Hello ${fname},
+    <br/>
+    <p>Your email has been successfully verified.  You may log in</p>
+    </p>
+   
+    `,
+  }
+  send(mailObject)
+}
