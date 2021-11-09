@@ -6,9 +6,9 @@ POST http://localhost:8000/api/v1/user
 Content-Type: application/json
 
 {
-    "fname":"batman",
-    "lname": "Saikia",
-    "email":"Tester2@iii.co",
+    "fname":"spidey",
+    "lname": "doom",
+    "email":"email@iii.co",
     "password":"1234Aa/",
     "phone":"999999999",
     "dob": "1993-04-23",
@@ -24,8 +24,8 @@ POST http://localhost:8000/api/v1/user/email-verification
 Content-Type: application/json
 
 {
-    "otp":"67051433",
-    "email":"Tester2@iii.co"
+    "otp":"1431128m9",
+    "email":"Teter@iii.co"
 }
 ### Get client info
 GET http://localhost:8000/api/v1/user
@@ -34,3 +34,11 @@ Content-Type: application/json
 {
   
 }
+
+
+###### categories
+
+
+### fetch category
+GET http://localhost:8000/api/v1/category
+Content-Type: application/json

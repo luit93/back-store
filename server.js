@@ -20,14 +20,16 @@ import mongoClient from './src/config/db.js'
 mongoClient()
 //load routers
 import profileRouter from './src/routers/profileRouter.js'
+import categoryRouter from './src/routers/categoryRouter.js'
 //client user routers
 app.use('/api/v1/user', profileRouter)
-
+app.use('/api/v1/category', categoryRouter)
 // app.use()
 
 app.use('/', (req, res) => {
   res.send('this is the abyss')
 })
+
 app.listen(PORT, (error) => {
   if (error) {
     return console.log(error)
