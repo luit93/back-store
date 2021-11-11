@@ -41,4 +41,13 @@ Content-Type: application/json
 
 ### fetch category
 GET http://localhost:8000/api/v1/category
-Content-Type: application/json
+Content-Type: application/
+
+
+
+
+####### products
+
+### fetch products
+GET http://localhost:8000/api/v1/product
+Content-Type: application/

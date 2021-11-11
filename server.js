@@ -21,9 +21,12 @@ mongoClient()
 //load routers
 import profileRouter from './src/routers/profileRouter.js'
 import categoryRouter from './src/routers/categoryRouter.js'
+import productRouter from './src/routers/productRouter.js'
+
 //client user routers
 app.use('/api/v1/user', profileRouter)
 app.use('/api/v1/category', categoryRouter)
+app.use('/api/v1/product', productRouter)
 // app.use()
 
 app.use('/', (req, res) => {
