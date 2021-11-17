@@ -1,10 +1,10 @@
 import express from 'express'
-import { getProduct } from '../models/product/Product.model.js'
+import { getProducts } from '../models/product/Product.model.js'
 const Router = express.Router()
 
 Router.get('/', async (req, res) => {
   try {
-    const products = await getProduct()
+    const products = await getProducts()
 
     res.json({
       status: 'success',

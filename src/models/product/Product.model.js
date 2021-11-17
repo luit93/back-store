@@ -1,5 +1,5 @@
 import ProductSchema from './Product.schema.js'
 
-export const getProduct = () => {
+export const getProducts = () => {
   return ProductSchema.find()
 }
